@@ -5,4 +5,6 @@ def greet(name, location):
     print(f"How is the weather in {location} today?")
 
 
- greet('Robi', 'Jessore')
+greet("Robi", "Jakarta")
+greet("Budi", "Bandung")
+greet("Andi", "Surabaya")
