@@ -1,0 +1,46 @@
+import turtle
+
+screen = turtle.Screen()
+screen.bgcolor("pink")
+turtle.hideturtle()
+turtle.pensize(2)
+turtle.speed("fastest")
+
+
+def draw_heart():
+    turtle.begin_fill()
+    turtle.fillcolor("red")
+    turtle.left(140)
+    turtle.forward(224)
+    for _ in range(200):
+        turtle.right(1)
+        turtle.forward(2)
+    turtle.left(120)
+    for _ in range(200):
+        turtle.right(1)
+        turtle.forward(2)
+    turtle.forward(224)
+    turtle.end_fill()
+
+
+def draw_letter(letter, size, x, y):
+    turtle.penup()
+    turtle.goto(x, y)
+    turtle.pendown()
+    turtle.color("white")
+    turtle.write(letter, font=("Love Letters", size, "bold"))
+    turtle.penup()
+
+
+draw_heart()
+
+word = "Mimi"
+word_length = len(word)
+word_width = word_length * 36
+middle_x = -word_width / 2
+middle_y = 160
+for letter in word:
+    draw_letter(letter, 36, middle_x, middle_y)
+    middle_x += 36
+
+screen.exitonclick()
